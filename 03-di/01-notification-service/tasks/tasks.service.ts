@@ -30,13 +30,12 @@ export class TasksService {
 
   async updateTask(id: string, updateTaskDto: UpdateTaskDto) {
     const task = this.tasks.find((t) => t.id === id);
-    if (!task) {
-      throw new NotFoundException(`Задача с ID ${id} не найдена`);
-    }
+
+    if (!task) throw new NotFoundException(`Задача с ID ${id} не найдена`);
 
     Object.assign(task, updateTaskDto);
     const user = this.usersService.getUserById(task.assignedTo);
-    this.notificationService.sendSMS(user.phone, `Статус задачи "${task.title}" изменён на "${task.status}"`);
+    this.notificationService.sendSMS(user.phone, `Статус задачи "${task.title}" обновлён на "${task.status}"`);
     return task;
   }
 }
