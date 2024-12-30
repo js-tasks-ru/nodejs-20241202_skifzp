@@ -35,5 +35,7 @@ export class CreateTaskDto extends PickType(Task, [
 ]) {}
 
 export class UpdateTaskDto extends PickType(Task, [
+  "title",
+  "description",
   "status",
 ]) {}

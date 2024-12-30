@@ -10,7 +10,9 @@ export class UsersService {
 
   getUserById(id: number) {
     const user = this.users.find((user) => user.id === id);
+
     if (!user) throw new NotFoundException(`user with id ${id} is not found`);
+
     return user;
   }
 }

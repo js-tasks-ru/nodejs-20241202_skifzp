@@ -36,6 +36,7 @@ export class TasksService {
     Object.assign(task, updateTaskDto);
     const user = this.usersService.getUserById(task.assignedTo);
     this.notificationService.sendSMS(user.phone, `Статус задачи "${task.title}" обновлён на "${task.status}"`);
+
     return task;
   }
 }
