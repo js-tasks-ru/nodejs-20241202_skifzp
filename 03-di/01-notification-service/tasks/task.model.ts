@@ -33,6 +33,7 @@ export class CreateTaskDto extends PickType(Task, [
   "description",
   "assignedTo",
 ]) {}
+
 export class UpdateTaskDto extends PickType(Task, [
   "title",
   "description",
