@@ -1,3 +1,6 @@
 import { IsString } from "class-validator";
 
-export class CreateTaskDto {}
+export class CreateTaskDto {
+  public title: string;
+  public description: string;
+}
